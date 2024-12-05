@@ -6,6 +6,7 @@ import SignUp from "../components/Auth/SignUp";
 import Protected from "./Protected";
 import AllEquipments from "../pages/AllEquipments";
 import AddEquipment from "../pages/AddEquipment";
+import ViewDetails from "../components/AllEquipments/ViewDetails";
 
 const routes = createBrowserRouter([
     {
@@ -15,11 +16,19 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch("http://localhost:5000/homeEquip")
             },
             {
                 path: '/allEquipments',
-                element: <AllEquipments></AllEquipments>
+                element: <AllEquipments></AllEquipments>,
+                loader: () => fetch("http://localhost:5000/allEquipments")
+            },
+            {
+                path: '/allEquipments/:id',
+                element: <Protected><ViewDetails></ViewDetails></Protected>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allEquipments/${params.id}`)
+
             },
             {
                 path: '/addEquipments',

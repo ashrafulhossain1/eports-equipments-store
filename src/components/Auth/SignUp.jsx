@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
   const { emailPasswordSignUp, updateProfileData } = useContext(AuthContext)
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -14,7 +15,7 @@ const SignUp = () => {
     const password = e.target.password.value;
     console.log(name, photo, email, password)
 
-    const userInfo = { name, email}
+    const userInfo = { name, email, photo }
 
     emailPasswordSignUp(email, password)
       .then((result) => {
@@ -24,7 +25,6 @@ const SignUp = () => {
         updateProfileData(name, photo)
           .then(() => {
             console.log("Name and Photo Update")
-            navigate('/')
           })
           // update error
           .catch(updateError => {
