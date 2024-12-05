@@ -3,15 +3,24 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
 
-    const {name} = useContext(AuthContext)
+    const handleSingOut = () => {
+        logOut()
+            .then(() => {
+                console.log('success Sign Out')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
 
     const navLinks = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/allEquipments'>All Equipments</NavLink></li>
-        <li><NavLink to='/addEquipments'>Add Equipments</NavLink></li>
-        <li><NavLink to='/myEquipments'>My Equipments</NavLink></li>
+        <li><NavLink className='rounded-full' to='/'>Home</NavLink></li>
+        <li><NavLink className='rounded-full' to='/allEquipments'>All Equipments</NavLink></li>
+        <li><NavLink className='rounded-full' to='/addEquipments'>Add Equipments</NavLink></li>
+        <li><NavLink className='rounded-full' to='/myEquipments'>My Equipments</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-md">
@@ -37,16 +46,27 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl">EquiSports</Link>
+                <Link to='/' className="btn btn-ghost text-xl rounded-full">EquiSports</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <NavLink to='/SignIn' className='text-xs btn btn-ghost  md:text-base'>Sign In</NavLink>
-                <NavLink to='signUp' className='text-xs btn btn-ghost  md:text-base'>Sign Up</NavLink>
+            <div className="navbar-end items-center">
+                {
+                    user ?
+                        <>
+                            <img className='h-12 w-12 object-cover border p-1 rounded-full bg-purple-600/15 mr-2' src={user?.photoURL} alt="" />
+                            <Link onClick={handleSingOut} className='btn btn-ghost rounded-full'>Log Out</Link>
+                        </>
+
+                        :
+                        <>
+                            <NavLink to='/SignIn' className='text-xs btn btn-ghost  rounded-full md:text-base'>Sign In</NavLink>
+                            <NavLink to='signUp' className='text-xs btn btn-ghost  rounded-full md:text-base'>Sign Up</NavLink>
+                        </>
+                }
             </div>
         </div>
     );

@@ -1,8 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignIn = () => {
+    const { emailPasswordSignIn } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    // console.log(location)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -10,14 +15,17 @@ const SignIn = () => {
         const password = e.target.password.value;
         console.log(email, password)
 
-        // emailPasswordSignIn(email, password)
-        //     .then((result) => {
-        //         notifySuccess()
-        //         navigate(location?.state ? location.state : '/')
-        //     })
-        //     .catch((error) => {
-        //         return toast.error("Please input correct email and password")
-        //     })
+        emailPasswordSignIn(email, password)
+            .then((result) => {
+                console.log(result)
+
+
+
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch((error) => {
+                console.log("sign In error: ", error)
+            })
     }
 
     return (

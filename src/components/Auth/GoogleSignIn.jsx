@@ -1,12 +1,74 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
+import { data, useLocation, useNavigate } from 'react-router-dom';
 
 const GoogleSignIn = () => {
     const { googleSignIn } = useContext(AuthContext)
+    const [oldUser, setOldUser] = useState(false)
+    const location = useLocation()
+    const navigate = useNavigate()
+    // console.log(location)
 
     const handleGoogle = () => {
         googleSignIn()
-    }
+            .then((result) => {
+                console.log('Google Logged in', result);
+                const name = result?.user?.displayName;
+                const email = result?.user?.email;
+                const photo = result?.user?.photoURL;
+
+                const userInfo = { name, email, photo };
+
+                // Check if user exists in the database
+                fetch(`http://localhost:5000/users/${email}`)
+                    .then((res) => {
+                        if (!res.ok) {
+                            // throw new Error(`Server Error: ${res.status}`);
+                            console.log('Root response Error')
+                        }
+                        return res.json();
+                    })
+                    .then((data) => {
+                        if (data) {
+                            console.log("User already exists:", data);
+                            // setOldUser(true);
+                            navigate(location?.state ? location.state : '/'); 
+                        }
+                        else {
+                            console.log("New user, creating account...");
+                            fetch('http://localhost:5000/users', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify(userInfo),
+                            })
+                                .then((postRes) => {
+                                    if (!postRes.ok) {
+                                        // throw new Error(`Post Error: ${postRes.status}`);
+                                        console.log('POST response Error')
+                                    }
+                                    return postRes.json();
+                                })
+                                .then((postData) => {
+                                    console.log("New user added:", postData);
+                                    // setOldUser(false);
+                                    navigate(location?.state ? location.state : '/'); 
+                                })
+                                .catch((error) => console.error("Error adding user:", error));
+                        }
+                    })
+                    .catch((error) => console.error("Error checking user:", error));
+
+
+                    
+            })
+            .catch((error) => {
+                console.log("Google Login error", error.message);
+            });
+    };
+
+
 
     return (
         <button onClick={handleGoogle}

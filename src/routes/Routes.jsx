@@ -3,6 +3,9 @@ import MainLayouts from "../Layouts/MainLayouts";
 import Home from "../pages/Home";
 import SignIn from "../components/Auth/SignIn";
 import SignUp from "../components/Auth/SignUp";
+import Protected from "./Protected";
+import AllEquipments from "../pages/AllEquipments";
+import AddEquipment from "../pages/AddEquipment";
 
 const routes = createBrowserRouter([
     {
@@ -15,16 +18,16 @@ const routes = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path:'/allEquipments',
-                element: <p>All equip</p>
+                path: '/allEquipments',
+                element: <AllEquipments></AllEquipments>
             },
             {
                 path: '/addEquipments',
-                element: <p>Add Equip</p>
+                element: <Protected><AddEquipment></AddEquipment></Protected>
             },
             {
-                path:'myEquipments',
-                element: <p>My Equip</p>
+                path: '/myEquipments',
+                element: <Protected><p>My Equip</p></Protected>
             },
             {
                 path: '/SignIn',

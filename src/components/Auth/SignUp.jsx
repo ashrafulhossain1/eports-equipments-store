@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
-
-  // const { emailPasswordSignUp, updateProfileData } = useContext(AuthContext)
-
-  // const navigate = useNavigate()
+  const { emailPasswordSignUp, updateProfileData } = useContext(AuthContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -13,31 +12,48 @@ const SignUp = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // console.log(name, photo, email, password)
+    console.log(name, photo, email, password)
+
+    const userInfo = { name, email}
+
+    emailPasswordSignUp(email, password)
+      .then((result) => {
+        console.log(result)
+
+        //------------------------- update Profile ------------------------------
+        updateProfileData(name, photo)
+          .then(() => {
+            console.log("Name and Photo Update")
+            navigate('/')
+          })
+          // update error
+          .catch(updateError => {
+            console.log(updateError.message)
+          })
 
 
-    // emailPasswordSignUp(email, password)
-    //     .then((result) => {
-    //         // console.log(result)
-    //         notifySuccess()
+        //-------------------------- post user API------------------------------//
+        fetch('http://localhost:5000/users', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(userInfo)
 
-    //         updateProfileData(name, photo)
-    //             .then(() => {
-    //                 // console.log("Name and Photo Update")
-    //                 // navigate('/')
-    //             })
-    //             .catch(updateError => {
-    //                 // console.log(updateError.message)
-    //             })
-    //         navigate('/')
-    //     })
-    //     .catch((error => {
-    //         return toast.error(error.message)
-    //         // return toast.error("Length must be at least 6 character")
-    //     }))
+        })
+          .then(res => res.json())
+          .then(data => console.log(data))
 
 
 
+
+
+        navigate('/')
+      })
+      .catch((error => {
+        console.log(error.message)
+        // return toast.error("Length must be at least 6 character")
+      }))
   }
   return (
     <div>
@@ -48,7 +64,7 @@ const SignUp = () => {
             <h1 className="md:text-3xl text-xl text-center font-serif font-bold mb-6 text-purple-600">
               Register Your Account
             </h1>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-1">
               {/* Name Input */}
               <div className="form-control">
                 <label className="label font-medium text-gray-700">
@@ -87,7 +103,7 @@ const SignUp = () => {
                 />
               </div>
               {/* Password Input */}
-              <div className="form-control relative">
+              <div className="form-control ">
                 <label className="label font-medium text-gray-700">
                   <span>Password</span>
                 </label>
@@ -100,7 +116,7 @@ const SignUp = () => {
                 />
               </div>
               {/* Submit Button */}
-              <div className="form-control">
+              <div className="form-control mt-0">
                 <button className="btn w-full bg-purple-700 text-white font-bold py-3 rounded-lg hover:bg-purple-600">
                   Register
                 </button>
