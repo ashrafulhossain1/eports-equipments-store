@@ -18,9 +18,6 @@ const SignIn = () => {
         emailPasswordSignIn(email, password)
             .then((result) => {
                 console.log(result)
-
-
-
                 navigate(location?.state ? location.state : '/')
             })
             .catch((error) => {

@@ -7,6 +7,8 @@ import Protected from "./Protected";
 import AllEquipments from "../pages/AllEquipments";
 import AddEquipment from "../pages/AddEquipment";
 import ViewDetails from "../components/AllEquipments/ViewDetails";
+import MyEquipments from "../pages/MyEquipments";
+import UpdateEquipments from "../pages/UpdateEquipments";
 
 const routes = createBrowserRouter([
     {
@@ -36,7 +38,12 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/myEquipments',
-                element: <Protected><p>My Equip</p></Protected>
+                element: <Protected><MyEquipments></MyEquipments></Protected>
+            },
+            {
+                path: '/update/:id',
+                element: <Protected><UpdateEquipments></UpdateEquipments></Protected>,
+                loader: ({params})=> fetch(`http://localhost:5000/equipment/${params.id}`)
             },
             {
                 path: '/SignIn',

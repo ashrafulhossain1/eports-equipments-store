@@ -38,7 +38,7 @@ const AddEquipment = () => {
       })
          .then(res => res.json())
          .then(data => {
-            form.reset()
+            // form.reset()
             console.log(data)
          })
    }
