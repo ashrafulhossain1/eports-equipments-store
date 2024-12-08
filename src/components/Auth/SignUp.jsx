@@ -16,7 +16,7 @@ const SignUp = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, photo, email, password)
+    // console.log(name, photo, email, password)
 
     const userInfo = { name, email, photo }
     
@@ -32,7 +32,7 @@ const SignUp = () => {
 
     emailPasswordSignUp(email, password)
       .then((result) => {
-        console.log(result)
+        // console.log(result)
 
         //------------------------- update Profile ------------------------------
         updateProfileData(name, photo)
@@ -61,7 +61,7 @@ const SignUp = () => {
         navigate('/')
       })
       .catch((error => {
-        console.log(error.message)
+        // console.log(error.message)
         // return toast.error("Length must be at least 6 character")
       }))
   }

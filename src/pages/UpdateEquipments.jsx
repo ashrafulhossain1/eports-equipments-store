@@ -8,13 +8,13 @@ const UpdateEquipments = () => {
     const { user } = useContext(AuthContext)
 
     const equipment = useLoaderData()
-    console.log(equipment)
+    // console.log(equipment)
     const { _id, image, itemName, categoryName, price, description, rating, processingTime, stockStatus, userName, userEmail } = equipment;
 
 
     const handleUpdate = (e) => {
         e.preventDefault()
-        console.log('clicked add equip')
+        // console.log('clicked add equip')
         const form = e.target;
 
         // Accessing form field values by their name attribute
@@ -31,7 +31,7 @@ const UpdateEquipments = () => {
 
         // Logging form field values
         const updateEquipment = { image, itemName, categoryName, price, description, rating, processingTime, stockStatus, userName, userEmail };
-        console.log(updateEquipment)
+        // console.log(updateEquipment)
 
 
         fetch(`https://sport-express-server.vercel.app/update/${_id}`, {
@@ -44,7 +44,7 @@ const UpdateEquipments = () => {
             .then(res => res.json())
             .then(data => {
                 // form.reset()
-                console.log(data)
+                // console.log(data)
                 if (data.modifiedCount) {
                     Swal.fire({
                         // position: "top-end",

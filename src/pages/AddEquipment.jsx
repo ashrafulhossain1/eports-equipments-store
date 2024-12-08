@@ -10,7 +10,7 @@ const AddEquipment = () => {
 
    const handleSubmit = (e) => {
       e.preventDefault()
-      console.log('clicked add equip')
+      // console.log('clicked add equip')
       const form = e.target;
 
       // Accessing form field values by their name attribute

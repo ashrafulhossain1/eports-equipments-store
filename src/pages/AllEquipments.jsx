@@ -25,7 +25,7 @@ const AllEquipments = () => {
 
 
 
-    console.log(equipments);
+    // console.log(equipments);
     return (
         <div>
             <Helmet>

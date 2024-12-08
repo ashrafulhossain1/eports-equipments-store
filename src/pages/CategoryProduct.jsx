@@ -5,7 +5,7 @@ import EquipmentCard from '../components/Home/EquipmentCard';
 const CategoryProduct = () => {
     const { cName } = useParams()
     const [catProducts, setCatProducts] = useState([])
-    console.log(cName)
+    // console.log(cName)
 
     useEffect(() => {
         fetch(`https://sport-express-server.vercel.app/allEquipments`)
@@ -22,7 +22,7 @@ const CategoryProduct = () => {
 
 
 
-    console.log(catProducts)
+    // console.log(catProducts)
     if (catProducts.length == 0) {
         return <div><h2 className='text-xl font-light md:text-2xl text-center my-10 lg:text-3xl'>There is No Product Of This Criteria</h2></div>
     }

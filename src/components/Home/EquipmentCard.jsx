@@ -5,13 +5,15 @@ const EquipmentCard = ({ equipment }) => {
     const { _id, image, itemName, categoryName, price } = equipment;
 
     return (
-        <div className="bg-light-card dark:border-2 dark:border-white dark:bg-[#121212] shadow-lg rounded-lg ">
+        <div className="bg-light-card flex flex-col justify-between dark:border-2 dark:border-white dark:bg-[#121212] shadow-lg rounded-lg slider-shadow">
             {/* Product Image */}
-            <img
-                src={image}
-                alt={itemName}
-                className="w-full h-72 object-cover overflow-hidden transition-transform transform hover:scale-105 hover:rounded-lg"
-            />
+            <div className='h-52 p-2 rounded-md'>
+                <img
+                    src={image}
+                    alt={itemName}
+                    className="w-full h-full object-cover overflow-hidden transition-transform transform hover:scale-105 hover:rounded-lg"
+                />
+            </div>
 
             {/* Product Details */}
             <div className="p-4 text-light-text dark:text-dark-text">

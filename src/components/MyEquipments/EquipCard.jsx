@@ -43,42 +43,46 @@ const EquipCard = ({ card, myEquips, setMyEquips }) => {
     }
 
     return (
-        <div className="border rounded-lg shadow-md md:p-4  p-2 bg-white">
+        <div className="border flex flex-col justify-between rounded-lg shadow-md md:p-4  p-2 bg-white">
             {/* Image */}
-            <img
-                src={image}
-                alt={itemName}
-                className="w-full h-50 object-cover rounded-t-lg mb-4"
-            />
-
-            {/* Details */}
-            <div className="mb-4">
-                <h2 className="text-xl font-semibold">{itemName}</h2>
-                <h2 className="text-sm font-bold text-gray-600"><span>In Stock: </span>{stockStatus} Unit</h2>
-                <p className="text-gray-500">Category: {categoryName}</p>
-                <p className="text-gray-500">Price: ${price}</p>
-                {/* Rating */}
-                <div className="flex items-center">
-                    <span className="text-yellow-500 text-xl font-bold">{rating}</span>
-                    <span className="ml-2 text-sm text-gray-500">/ 5 Ratings</span>
-                </div>
-                <p className='text-gray-600 font-semibold'>Seller: {userName}</p>
+            <div className='h-44'>
+                <img
+                    src={image}
+                    alt={itemName}
+                    className="w-full h-full  object-contain rounded-t-lg mb-4"
+                />
             </div>
 
-            {/* Buttons */}
-            <div className="flex justify-between">
-                <Link to={`/update/${_id}`}>
+            <div>
+                {/* Details */}
+                <div className="mb-4">
+                    <h2 className="text-xl font-semibold">{itemName}</h2>
+                    <h2 className="text-sm font-bold text-gray-600"><span>In Stock: </span>{stockStatus} Unit</h2>
+                    <p className="text-gray-500">Category: {categoryName}</p>
+                    <p className="text-gray-500">Price: ${price}</p>
+                    {/* Rating */}
+                    <div className="flex items-center">
+                        <span className="text-yellow-500 text-xl font-bold">{rating}</span>
+                        <span className="ml-2 text-sm text-gray-500">/ 5 Ratings</span>
+                    </div>
+                    <p className='text-gray-600 font-semibold'>Seller: {userName}</p>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex justify-between">
+                    <Link to={`/update/${_id}`}>
+                        <button
+                            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                        >
+                            Update
+                        </button>
+                    </Link>
                     <button
-                        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                    >
-                        Update
+                        onClick={() => handleDelete(_id)}
+                        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                        Delete
                     </button>
-                </Link>
-                <button
-                    onClick={() => handleDelete(_id)}
-                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
-                    Delete
-                </button>
+                </div>
             </div>
         </div>
     );

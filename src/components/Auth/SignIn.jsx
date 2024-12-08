@@ -16,11 +16,11 @@ const SignIn = () => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password)
+        // console.log(email, password)
 
         emailPasswordSignIn(email, password)
             .then((result) => {
-                console.log(result)
+                // console.log(result)
                 Swal.fire("Welcome From EquipSports");
                 navigate(location?.state ? location.state : '/')
             })

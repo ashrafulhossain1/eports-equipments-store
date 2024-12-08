@@ -13,7 +13,7 @@ const GoogleSignIn = () => {
     const handleGoogle = () => {
         googleSignIn()
             .then((result) => {
-                console.log('Google Logged in', result);
+                // console.log('Google Logged in', result);
                 const name = result?.user?.displayName;
                 const email = result?.user?.email;
                 const photo = result?.user?.photoURL;
@@ -25,7 +25,7 @@ const GoogleSignIn = () => {
                     .then((res) => {
                         if (!res.ok) {
                             // throw new Error(`Server Error: ${res.status}`);
-                            console.log('Root response Error')
+                            // console.log('Root response Error')
                         }
                         return res.json();
                     })
@@ -47,7 +47,7 @@ const GoogleSignIn = () => {
                                 .then((postRes) => {
                                     if (!postRes.ok) {
                                         // throw new Error(`Post Error: ${postRes.status}`);
-                                        console.log('POST response Error')
+                                        // console.log('POST response Error')
                                     }
                                     return postRes.json();
                                 })

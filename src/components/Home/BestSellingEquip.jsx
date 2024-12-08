@@ -11,7 +11,7 @@ import { Pagination, Autoplay } from 'swiper/modules';
 
 const BestSellingEquip = () => {
     return (
-        <div className="px-4 md:px-16 py-8">
+        <div className="px-4 md:px-16 py-8 slider-shadow">
             <Swiper
                 spaceBetween={30}
                 loop={true}
@@ -49,7 +49,7 @@ const BestSellingEquip = () => {
                         <div className="w-full md:w-1/2">
                             <img
                                 src="https://i.ibb.co/RvqDL7n/H56d8876351194ef2b0af89b66aedfca2f-jpg-720x720q50.jpg"
-                                className="w-full h-[400px]"
+                                className="w-full h-[400px] object-contain"
                                 alt="Sporty Shoes"
                             />
                         </div>

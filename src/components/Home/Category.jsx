@@ -8,7 +8,7 @@ const navigate = useNavigate()
 
     const handleCategory = (categoryName) => {
         navigate(`/catBased/${categoryName}`)
-        console.log(`Category clicked: ${categoryName}`);
+        // console.log(`Category clicked: ${categoryName}`);
     };
 
     return (
