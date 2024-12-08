@@ -43,12 +43,12 @@ const EquipCard = ({ card, myEquips, setMyEquips }) => {
     }
 
     return (
-        <div className="border rounded-lg shadow-md p-4 bg-white">
+        <div className="border rounded-lg shadow-md md:p-4  p-2 bg-white">
             {/* Image */}
             <img
                 src={image}
                 alt={itemName}
-                className="w-full h-40 object-cover rounded-t-lg mb-4"
+                className="w-full h-50 object-cover rounded-t-lg mb-4"
             />
 
             {/* Details */}

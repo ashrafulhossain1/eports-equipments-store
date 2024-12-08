@@ -15,6 +15,13 @@ const AllEquipments = () => {
             })
     }
 
+    if(equipments.length == 0){
+        return (
+            <div>
+                <h2 className='md:text-4xl text-2xl text-center'>No Equipments  have been added yet</h2>
+            </div>
+        )
+    }
 
 
 

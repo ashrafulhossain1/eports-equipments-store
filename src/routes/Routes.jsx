@@ -11,12 +11,13 @@ import MyEquipments from "../pages/MyEquipments";
 import UpdateEquipments from "../pages/UpdateEquipments";
 import CategoryProduct from "../pages/CategoryProduct";
 import ContactUs from "../pages/ContactUs";
+import ErrorPage from "../pages/ErrorPage";
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayouts></MainLayouts>,
-        errorElement: <p>Page is not define: error page</p>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',

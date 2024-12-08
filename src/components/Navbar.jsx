@@ -44,7 +44,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="sticky top-0 left-0 z-50 shadow-md glass bg-light-background dark:bg-dark-background">
+        <div className="sticky top-0 left-0 z-50 shadow-md glass bg-[white] dark:bg-dark-background">
             <div className="container mx-auto navbar ">
                 <div className="navbar-start ml-0 pl-0">
                     <div className="dropdown ">
@@ -71,7 +71,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <Link to="/" className="btn btn-ghost text-xl rounded-full text-light-text dark:text-dark-text">
+                    <Link to="/" className="btn p-0 btn-ghost text-xl rounded-full text-light-text dark:text-dark-text">
                         EquiSports
                     </Link>
                 </div>
@@ -101,13 +101,13 @@ const Navbar = () => {
                         <>
                             <NavLink
                                 to="/SignIn"
-                                className="text-xs btn btn-ghost rounded-full md:text-base text-light-text dark:text-dark-text"
+                                className="text-xs btn px-2 btn-ghost rounded-full md:text-base text-light-text dark:text-dark-text"
                             >
                                 Sign In
                             </NavLink>
                             <NavLink
                                 to="/signUp"
-                                className="text-xs btn btn-ghost rounded-full md:text-base text-light-text dark:text-dark-text"
+                                className="text-xs btn mr-0 px-2 btn-ghost rounded-full md:text-base text-light-text dark:text-dark-text"
                             >
                                 Sign Up
                             </NavLink>

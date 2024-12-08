@@ -13,9 +13,9 @@ const ViewDetails = () => {
             <Helmet><title>Equipments Details</title></Helmet>
             <div className="container mx-auto px-4">
                 {/* Product Card */}
-                <div className="bg-white rounded-lg shadow-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white rounded-lg shadow-lg p-3 md:p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Product Image */}
-                    <div className="flex justify-center items-center h-[450px]">
+                    <div className="flex justify-center items-center md:h-[450px]">
                         <img
                             src={image || "https://via.placeholder.com/400"}
                             alt={itemName}
@@ -26,23 +26,23 @@ const ViewDetails = () => {
                     {/* Product Details */}
                     <div className="flex flex-col justify-between">
                         <div>
-                            <h2 className="text-3xl font-bold text-gray-800 mb-4">{itemName}</h2>
-                            <p className="text-gray-600 text-sm mb-4">Category: {categoryName}</p>
+                            <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-4">{itemName}</h2>
+                            <p className="text-gray-600 text-sm mv-2 md:mb-4">Category: {categoryName}</p>
 
                             {/* Price and Stock */}
-                            <div className="flex items-center mb-4">
+                            <div className="flex items-center mb-2 md:mb-4">
                                 <p className="text-2xl font-semibold text-red-600">${price}</p>
                                 <p className="ml-4 text-sm text-gray-500">{stockStatus > 0 ? `${stockStatus} items available` : "Out of stock"}</p>
                             </div>
 
                             {/* Rating */}
-                            <div className="flex items-center mb-4">
+                            <div className="flex items-center mv-2 md:mb-4">
                                 <span className="text-yellow-500 text-xl font-bold">{rating}</span>
                                 <span className="ml-2 text-sm text-gray-500">/ 5 Ratings</span>
                             </div>
 
                             {/* Description */}
-                            <p className="text-gray-700 text-base mb-2">{description}</p>
+                            <p className="text-gray-700 text-sm  md:text-base mb-2">{description}</p>
                         </div>
 
                         {/* Additional Info */}
