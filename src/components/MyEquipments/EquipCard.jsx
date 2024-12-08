@@ -17,7 +17,7 @@ const EquipCard = ({ card, myEquips, setMyEquips }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/myEquip/${id}`, {
+                fetch(`https://sport-express-server.vercel.app/myEquip/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

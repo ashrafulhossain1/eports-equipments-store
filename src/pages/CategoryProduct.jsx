@@ -8,7 +8,7 @@ const CategoryProduct = () => {
     console.log(cName)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allEquipments`)
+        fetch(`https://sport-express-server.vercel.app/allEquipments`)
             .then(res => res.json())
             .then(data => {
                 const filterByCategory = [...data].filter((p) => p.categoryName.includes(cName))

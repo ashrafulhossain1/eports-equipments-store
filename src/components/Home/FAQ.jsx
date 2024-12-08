@@ -52,18 +52,22 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="bg-gray-100 py-10">
+    <div className="bg-gray-100 dark:bg-[#121212] py-10">
       <div className="container mx-auto px-4">
-        <Fade direction="top" duration={1000}>  <h2 className="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2></Fade>
+        <Fade direction="top" duration={1000}>
+          <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-6">
+            Frequently Asked Questions
+          </h2>
+        </Fade>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <Fade key={index} direction="top" duration={1000}>
-              <div className="bg-white border border-gray-300 rounded-md p-4 shadow-sm">
+              <div className="bg-white dark:bg-[#1e1e1e] border border-gray-300 dark:border-gray-700 rounded-md p-4 shadow-sm">
                 <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <h3 className="text-lg font-semibold text-gray-800">
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
                     {faq.question}
                   </h3>
                   <span>
@@ -101,7 +105,9 @@ const FAQ = () => {
                   </span>
                 </div>
                 {open === index && (
-                  <p className="mt-3 text-gray-600">{faq.answer}</p>
+                  <p className="mt-3 text-gray-600 dark:text-gray-300">
+                    {faq.answer}
+                  </p>
                 )}
               </div>
             </Fade>

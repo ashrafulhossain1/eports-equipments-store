@@ -10,6 +10,7 @@ import ViewDetails from "../components/AllEquipments/ViewDetails";
 import MyEquipments from "../pages/MyEquipments";
 import UpdateEquipments from "../pages/UpdateEquipments";
 import CategoryProduct from "../pages/CategoryProduct";
+import ContactUs from "../pages/ContactUs";
 
 const routes = createBrowserRouter([
     {
@@ -20,17 +21,17 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch("http://localhost:5000/homeEquip")
+                loader: () => fetch("https://sport-express-server.vercel.app/homeEquip")
             },
             {
                 path: '/allEquipments',
                 element: <AllEquipments></AllEquipments>,
-                loader: () => fetch("http://localhost:5000/allEquipments")
+                loader: () => fetch("https://sport-express-server.vercel.app/allEquipments")
             },
             {
                 path: '/allEquipments/:id',
                 element: <Protected><ViewDetails></ViewDetails></Protected>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allEquipments/${params.id}`)
+                loader: ({ params }) => fetch(`https://sport-express-server.vercel.app/allEquipments/${params.id}`)
 
             },
             {
@@ -44,7 +45,7 @@ const routes = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <Protected><UpdateEquipments></UpdateEquipments></Protected>,
-                loader: ({params})=> fetch(`http://localhost:5000/equipment/${params.id}`)
+                loader: ({params})=> fetch(`https://sport-express-server.vercel.app/equipment/${params.id}`)
             },
             {
                 path: '/catBased/:cName',
@@ -57,6 +58,10 @@ const routes = createBrowserRouter([
             {
                 path: '/SignUp',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/contactUs',
+                element: <ContactUs></ContactUs>
             }
         ]
 

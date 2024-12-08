@@ -21,34 +21,34 @@ const Navbar = () => {
     const navLinks = (
         <>
             <li>
-                <NavLink className="rounded-full" to="/">
+                <NavLink className="rounded-full dark:text-dark-text" to="/">
                     Home
                 </NavLink>
             </li>
             <li>
-                <NavLink className="rounded-full" to="/allEquipments">
+                <NavLink className="rounded-full dark:text-dark-text" to="/allEquipments">
                     All Equipments
                 </NavLink>
             </li>
             <li>
-                <NavLink className="rounded-full" to="/addEquipments">
+                <NavLink className="rounded-full dark:text-dark-text" to="/addEquipments">
                     Add Equipments
                 </NavLink>
             </li>
-            <li>
-                <NavLink className="rounded-full" to="/myEquipments">
+            {user && <li>
+                <NavLink className="rounded-full dark:text-dark-text" to="/myEquipments">
                     My Equipments
                 </NavLink>
-            </li>
+            </li>}
         </>
     );
 
     return (
         <div className="sticky top-0 left-0 z-50 shadow-md glass bg-light-background dark:bg-dark-background">
             <div className="container mx-auto navbar ">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                <div className="navbar-start ml-0 pl-0">
+                    <div className="dropdown ">
+                        <div tabIndex={0} role="button" className="btn p-0 btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -84,7 +84,7 @@ const Navbar = () => {
                         <>
                             <Tooltip className="z-50" id="my-tooltip" />
                             <img
-                                className="h-12 w-12 object-cover border p-1 rounded-full bg-purple-600/15 mr-2"
+                                className="h-12 w-12 hidden sm:block object-cover border p-1 rounded-full bg-purple-600/15 mr-2"
                                 src={user?.photoURL}
                                 alt={user?.displayName || "User"}
                                 data-tooltip-id="my-tooltip"

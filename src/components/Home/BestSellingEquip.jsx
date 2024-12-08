@@ -1,79 +1,68 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
+import React from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// Import required modules
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const BestSellingEquip = () => {
     return (
-        <div className="my-10 mx-auto md:max-w-screen-xl slider-shadow py-4">
-            <h2 className="text-3xl font-bold text-center mb-8">Best Selling Equipment</h2>
+        <div className="px-4 md:px-16 py-8">
             <Swiper
-                spaceBetween={20}
-                slidesPerView={1}
-                navigation={true}
-                pagination={{ clickable: true }}
+                spaceBetween={30}
                 loop={true}
                 autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
+                    delay: 2000, // Adjust delay (in ms) for autoplay
+                    disableOnInteraction: false, // Prevent autoplay from pausing on user interaction
                 }}
-                effect="fade" // Added fade effect
-                modules={[Navigation, Pagination, Autoplay, EffectFade]} // Added effectFade module
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Pagination, Autoplay]}
                 className="mySwiper"
             >
-                {/* Slide 1: Badminton */}
                 <SwiperSlide>
-                    <div className="flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg overflow-hidden">
-                        <div className="md:h-[70vh]">
+                    <div className="flex flex-col md:flex-row items-center">
+                        <div className="w-full md:w-1/2">
                             <img
-                                className="h-full object-cover"
-                                src="https://i.ibb.co.com/RvqDL7n/H56d8876351194ef2b0af89b66aedfca2f-jpg-720x720q50.jpg"
-                                alt="Badminton"
+                                src="https://i.ibb.co/JQVL8NP/athletex-shoes-3-opt.jpg"
+                                className="w-full h-[350px] object-cover"
+                                alt="Athlete Shoes"
                             />
                         </div>
-                        <div className="p-6 md:w-1/2 md:flex-1">
-                            <h3 className="text-2xl font-semibold mb-4">Premium Badminton Set</h3>
-                            <ul className="list-disc pl-5 text-gray-600">
-                                <li className="font-bold text-lg text-blue-600">Brand: Victor</li>
-                                <li className="font-semibold">Rating: ★★★★☆</li>
-                                <li>Includes 2 rackets, shuttlecock, and carrying case.</li>
-                            </ul>
-                            <p className="text-lg font-bold text-green-600 my-4">$45.99</p>
-                            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                                <span>Know More</span>
-                            </button>
+                        <div className="w-full md:w-1/2 p-4">
+                            <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                                Athletex Running Shoes
+                            </h2>
+                            <p className="text-gray-600 dark:text-white">
+                                Comfortable and lightweight running shoes designed for daily use. Perfect for sports enthusiasts looking for both style and performance.
+                            </p>
                         </div>
                     </div>
                 </SwiperSlide>
-
-                {/* Slide 2: Football Boots */}
                 <SwiperSlide>
-                    <div className="flex flex-col md:flex-row-reverse items-center bg-white shadow-md rounded-lg overflow-hidden">
-                        <div className="md:w-1/2 md:h-[70vh]">
+                    <div className="flex flex-col md:flex-row items-center">
+                        <div className="w-full md:w-1/2">
                             <img
-                                className="h-full object-cover"
-                                src="https://i.ibb.co.com/JQVL8NP/athletex-shoes-3-opt.jpg"
-                                alt="Football Boots"
+                                src="https://i.ibb.co/RvqDL7n/H56d8876351194ef2b0af89b66aedfca2f-jpg-720x720q50.jpg"
+                                className="w-full h-[350px]"
+                                alt="Sporty Shoes"
                             />
                         </div>
-                        <div className="p-6 md:w-1/2">
-                            <h3 className="text-2xl font-semibold mb-4">Pro Grip Football Boots</h3>
-                            <ul className="list-disc pl-5 text-gray-600">
-                                <li className="font-bold text-lg text-blue-600">Brand: Nike</li>
-                                <li className="font-semibold">Rating: ★★★★★</li>
-                                <li>Enhanced grip and lightweight design for superior performance.</li>
-                            </ul>
-                            <p className="text-lg font-bold text-green-600 my-4">$49.99</p>
-                            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                                <span>Shop Now</span>
-                            </button>
+                        <div className="w-full md:w-1/2 p-4">
+                            <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                                Sporty Performance Shoes
+                            </h2>
+                            <p className="text-gray-600 dark:text-white">
+                                High-quality performance shoes designed for athletes. Provides exceptional grip and durability, ideal for intense workouts and training.
+                            </p>
                         </div>
                     </div>
                 </SwiperSlide>
-
-                {/* You can add more slides here */}
             </Swiper>
         </div>
     );

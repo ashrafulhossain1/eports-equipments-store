@@ -33,7 +33,7 @@ const UpdateEquipments = () => {
         console.log(updateEquipment)
 
 
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://sport-express-server.vercel.app/update/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

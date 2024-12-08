@@ -7,7 +7,7 @@ const MyEquipments = () => {
     const [myEquips, setMyEquips] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myEquip?email=${user.email}`)
+        fetch(`https://sport-express-server.vercel.app/myEquip?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyEquips(data)

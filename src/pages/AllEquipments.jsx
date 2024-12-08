@@ -7,7 +7,7 @@ const AllEquipments = () => {
 
 
     const handleSorting = ()=>{
-        fetch("http://localhost:5000/sortBy")
+        fetch("https://sport-express-server.vercel.app/sortBy")
         .then(res=>res.json())
         .then(data=> {
             setEquipments(data)

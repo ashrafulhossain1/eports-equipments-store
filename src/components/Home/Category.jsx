@@ -12,15 +12,15 @@ const navigate = useNavigate()
     };
 
     return (
-        <div className="bg-gray-100 py-10">
+        <div id="category" className="py-10 bg-light-card dark:bg-[#121212] dark:rounded-lg">
             <div className="container mx-auto px-4">
                 {/* Category Title */}
-                <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
+                <h2 className="text-3xl font-bold text-gray-800 text-center mb-8 dark:text-white">
                     Product Categories
                 </h2>
 
                 {/* Products Grid */}
-                <div className="block sm:hidden">
+                <div className="block md:hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
                         {/* Cricket */}
                         <div onClick={() => handleCategory("Cricket")} className="bg-white rounded-lg shadow-md p-4 cursor-pointer">
@@ -96,9 +96,9 @@ const navigate = useNavigate()
                     </div>
                 </div>
 
-                <div className="hidden sm:block">
+                <div className="hidden md:block">
                     <Marquee pauseOnHover={true}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                        <div className="md:grid md:grid-cols-6 gap-6">
                             {/* Cricket */}
                             <div onClick={() => handleCategory("Cricket")} className="bg-white rounded-lg shadow-md p-4 cursor-pointer ml-8">
                                 <img

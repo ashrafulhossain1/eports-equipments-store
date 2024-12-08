@@ -11,19 +11,26 @@ const Home = () => {
     const equipments = useLoaderData()
     // console.log(equipments)
     return (
-        <div className="">
+        <div className="bg-light-card  dark:border-white dark:bg-dark-card">
             {/* banner slider */}
             <section className="">
                 <Slider></Slider>
             </section>
             {/* home equips */}
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 max-w-screen-xl mx-auto">
-                {
-                    equipments.map((equipment) => <EquipmentCard key={equipment._id} equipment={equipment}></EquipmentCard>)
-                }
-            </section>
+            <div >
+                <div className="md:w-1/2 w-full mx-auto text-center text-black md:space-y-4 space-y-2 py-6 dark:text-dark-text">
+                    <h1 className="text-4xl ">Explore Our Wide Range of Sports Categories</h1>
+                    <p className="text-sm md:text-base">Discover top-quality sports equipment and accessories in our diverse product categories, including Cricket, Football, Basketball, Tennis, Badminton, and more. Shop by category to find exactly what you need for your game.</p>
+                </div>
+
+                <section className="grid py-6 md:py-12 grid-cols-1 md:grid-cols-2 dark:bg-dark-card lg:grid-cols-3 gap-32 max-w-screen-xl mx-auto">
+                    {
+                        equipments.map((equipment) => <EquipmentCard key={equipment._id} equipment={equipment}></EquipmentCard>)
+                    }
+                </section>
+            </div>
             {/* category section */}
-            <section>
+            <section id="category">
                 <Category></Category>
             </section>
             <section>
@@ -33,7 +40,7 @@ const Home = () => {
             </section>
             <section>
                 {/* <Fade direction="top" duration={1000}> */}
-                    <FAQ></FAQ>
+                <FAQ></FAQ>
                 {/* </Fade> */}
             </section>
         </div>

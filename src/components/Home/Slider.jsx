@@ -22,7 +22,7 @@ const Banner = () => {
                 modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
                 className="mySwiper"
             >
-                {/* Slide 1 - Parenting Objective Quote */}
+                {/* Slide 1 */}
                 <SwiperSlide>
                     <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
                         {/* Background Overlay */}
@@ -31,50 +31,65 @@ const Banner = () => {
                         <img
                             className="w-full h-full object-cover"
                             src="https://i.ibb.co.com/b2rxKTY/football-488714.jpg"
-                            alt="Parenting Inspiration"
+                            alt="Football Equipment"
                         />
-                        {/* Quote */}
+                        {/* Content */}
                         <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-                                "The goal of parenting is not to control, but to guide."
+                                Discover Premium Football Equipment
                             </h2>
-                            <p className="mt-2 text-base sm:text-lg">- L.R. Knost</p>
+                            <p className="mt-2 text-base sm:text-lg">
+                                Elevate your game with the best football gear designed for champions.
+                            </p>
+                            <button className="mt-4 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-all duration-300">
+                                <a href="#category">Explore More</a>
+                            </button>
                         </div>
                     </div>
                 </SwiperSlide>
 
-                {/* Slide 2 - Early Rise Quote */}
+                {/* Slide 2 */}
                 <SwiperSlide>
                     <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
                         <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
                         <img
                             className="w-full h-full object-cover"
                             src="https://i.ibb.co.com/jyM1j7B/cricket-8444899.jpg"
-                            alt="Early Rise Inspiration"
+                            alt="Cricket Equipment"
                         />
                         <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-                                "Early to bed and early to rise makes a man healthy, wealthy, and wise."
+                                Ultimate Cricket Gear Collection
                             </h2>
-                            <p className="mt-2 text-base sm:text-lg">- Benjamin Franklin</p>
+                            <p className="mt-2 text-base sm:text-lg">
+                                From bats to pads, find everything you need for the perfect innings.
+                            </p>
+                            <button className="mt-4 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-all duration-300">
+                                <a href="#category">Explore More</a>
+                            </button>
                         </div>
                     </div>
                 </SwiperSlide>
 
-                {/* Slide 3 - Psychologist's Best Quote */}
+                {/* Slide 3 */}
                 <SwiperSlide>
                     <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
                         <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
                         <img
                             className="w-full h-full object-cover"
                             src="https://i.ibb.co.com/NCZLDDw/badminton-1428046-1920.jpg"
-                            alt="Psychologist Wisdom"
+                            alt="Badminton Equipment"
                         />
                         <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">
-                                "The good life is a process, not a state of being."
+                                Badminton Essentials for Every Player
                             </h2>
-                            <p className="mt-2 text-base sm:text-lg">- Carl Rogers</p>
+                            <p className="mt-2 text-base sm:text-lg">
+                                Gear up with premium rackets and accessories to smash your way to success.
+                            </p>
+                            <button className="mt-4 px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-all duration-300">
+                                <a href="#category">Explore More</a>
+                            </button>
                         </div>
                     </div>
                 </SwiperSlide>

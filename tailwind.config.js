@@ -21,7 +21,7 @@ export default {
           secondary: "#FF7043", 
           accent: "#FFC107", 
           background: "#121212", 
-          text: "#E0E0E0", 
+          text: "#FFFFFF", 
           card: "#1E1E1E", 
         },
       },

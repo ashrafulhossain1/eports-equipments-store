@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { data, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 const GoogleSignIn = () => {
     const { googleSignIn } = useContext(AuthContext)
@@ -20,7 +21,7 @@ const GoogleSignIn = () => {
                 const userInfo = { name, email, photo };
 
                 // Check if user exists in the database
-                fetch(`http://localhost:5000/users/${email}`)
+                fetch(`https://sport-express-server.vercel.app/users/${email}`)
                     .then((res) => {
                         if (!res.ok) {
                             // throw new Error(`Server Error: ${res.status}`);
@@ -32,11 +33,11 @@ const GoogleSignIn = () => {
                         if (data) {
                             console.log("User already exists:", data);
                             // setOldUser(true);
-                            navigate(location?.state ? location.state : '/'); 
+                            navigate(location?.state ? location.state : '/');
                         }
                         else {
                             console.log("New user, creating account...");
-                            fetch('http://localhost:5000/users', {
+                            fetch('https://sport-express-server.vercel.app/users', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',
@@ -53,7 +54,7 @@ const GoogleSignIn = () => {
                                 .then((postData) => {
                                     console.log("New user added:", postData);
                                     // setOldUser(false);
-                                    navigate(location?.state ? location.state : '/'); 
+                                    navigate(location?.state ? location.state : '/');
                                 })
                                 .catch((error) => console.error("Error adding user:", error));
                         }
@@ -61,7 +62,7 @@ const GoogleSignIn = () => {
                     .catch((error) => console.error("Error checking user:", error));
 
 
-                    
+                Swal.fire("Welcome From EquipSports");
             })
             .catch((error) => {
                 console.log("Google Login error", error.message);

@@ -8,16 +8,16 @@ const ViewDetails = () => {
     const { _id, image, itemName, categoryName, price, description, rating, customization, processingTime, stockStatus, userName, userEmail } = loadedData;
 
     return (
-        <div className="bg-gray-100 min-h-screen py-8">
+        <div className="bg-gray-100  py-8">
             <div className="container mx-auto px-4">
                 {/* Product Card */}
-                <div className="bg-white rounded-lg shadow-lg p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="bg-white rounded-lg shadow-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Product Image */}
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center h-[450px]">
                         <img
                             src={image || "https://via.placeholder.com/400"}
                             alt={itemName}
-                            className="w-full h-auto max-w-sm rounded-md shadow-lg"
+                            className=" object-cover w-full h-full rounded-md shadow-lg"
                         />
                     </div>
 
@@ -40,7 +40,7 @@ const ViewDetails = () => {
                             </div>
 
                             {/* Description */}
-                            <p className="text-gray-700 text-base mb-4">{description}</p>
+                            <p className="text-gray-700 text-base mb-2">{description}</p>
                         </div>
 
                         {/* Additional Info */}
@@ -53,6 +53,9 @@ const ViewDetails = () => {
                             </p>
                             <p className="text-sm text-gray-500 mt-2">
                                 Seller: {userName}
+                            </p>
+                            <p className="text-sm text-gray-500 mt-2">
+                                Email: {userEmail}
                             </p>
                         </div>
 
