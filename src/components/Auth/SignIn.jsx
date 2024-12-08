@@ -4,6 +4,7 @@ import GoogleSignIn from './GoogleSignIn';
 import { AuthContext } from '../../contexts/AuthProvider';
 import Swal from 'sweetalert2'
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const SignIn = () => {
     const { emailPasswordSignIn } = useContext(AuthContext)
@@ -31,6 +32,7 @@ const SignIn = () => {
     return (
         <div>
             <Toaster></Toaster>
+            <Helmet><title>Login Page</title></Helmet>
             <div className="flex justify-center items-center md:min-h-screen bg-gradient-to-br from-gray-100 to-blue-50">
                 {/* Form Container */}
                 <div className="card w-full max-w-md p-8 bg-white shadow-2xl rounded-xl border-t-4 border-purple-500">

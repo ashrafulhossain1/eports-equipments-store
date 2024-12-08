@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 const UpdateEquipments = () => {
     const { user } = useContext(AuthContext)
@@ -60,6 +61,9 @@ const UpdateEquipments = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded my-10 border">
+            <Helmet>
+                <title>Update Equipments Info</title>
+            </Helmet>
             <h1 className="text-3xl font-semibold text-center mb-6">Update Equipment</h1>
             <form onSubmit={handleUpdate} className="grid gap-4 md:grid-cols-2">
 

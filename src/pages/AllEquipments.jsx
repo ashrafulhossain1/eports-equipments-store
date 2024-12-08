@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllEquipments = () => {
@@ -6,20 +7,23 @@ const AllEquipments = () => {
     const [equipments, setEquipments] = useState(loadedData);
 
 
-    const handleSorting = ()=>{
+    const handleSorting = () => {
         fetch("https://sport-express-server.vercel.app/sortBy")
-        .then(res=>res.json())
-        .then(data=> {
-            setEquipments(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                setEquipments(data)
+            })
     }
 
 
-    
+
 
     console.log(equipments);
     return (
         <div>
+            <Helmet>
+                <title>All Sports Equipments</title>
+            </Helmet>
             {/* Heading */}
             <div>
                 <h2 className="text-2xl md:text-4xl text-center my-8">Total Equipments: {equipments.length}</h2>

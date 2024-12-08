@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 
 const ViewDetails = () => {
@@ -9,6 +10,7 @@ const ViewDetails = () => {
 
     return (
         <div className="bg-gray-100  py-8">
+            <Helmet><title>Equipments Details</title></Helmet>
             <div className="container mx-auto px-4">
                 {/* Product Card */}
                 <div className="bg-white rounded-lg shadow-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-8">

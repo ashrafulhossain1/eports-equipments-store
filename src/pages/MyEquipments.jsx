@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
 import EquipCard from "../components/MyEquipments/EquipCard";
+import { Helmet } from "react-helmet-async";
 
 const MyEquipments = () => {
     const { user } = useContext(AuthContext)
@@ -18,6 +19,9 @@ const MyEquipments = () => {
 
     return (
         <div className="my-10">
+            <Helmet>
+                <title>My Equipment List</title>
+            </Helmet>
             {myEquips.length === 0 &&
                 <div>
                     <h1 className="text-4xl text-center">You haven't added any product yet</h1>

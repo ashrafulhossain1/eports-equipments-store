@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import Swal from 'sweetalert2'
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
   const { emailPasswordSignUp, updateProfileData } = useContext(AuthContext)
@@ -66,6 +67,7 @@ const SignUp = () => {
   }
   return (
     <div>
+      <Helmet><title>Sign Up For New Account</title></Helmet>
       <Toaster></Toaster>
       <div>
         <div className="flex justify-center items-center md:min-h-screen bg-gradient-to-br from-gray-100 to-blue-50 py-8">
