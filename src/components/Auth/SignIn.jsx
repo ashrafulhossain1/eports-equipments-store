@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
 import { AuthContext } from '../../contexts/AuthProvider';
+import Swal from 'sweetalert2'
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignIn = () => {
     const { emailPasswordSignIn } = useContext(AuthContext)
@@ -18,15 +20,17 @@ const SignIn = () => {
         emailPasswordSignIn(email, password)
             .then((result) => {
                 console.log(result)
+                Swal.fire("Welcome From EquipSports");
                 navigate(location?.state ? location.state : '/')
             })
             .catch((error) => {
-                console.log("sign In error: ", error)
+                return toast.error("Please input correct email and password")
             })
     }
 
     return (
         <div>
+            <Toaster></Toaster>
             <div className="flex justify-center items-center md:min-h-screen bg-gradient-to-br from-gray-100 to-blue-50">
                 {/* Form Container */}
                 <div className="card w-full max-w-md p-8 bg-white shadow-2xl rounded-xl border-t-4 border-purple-500">

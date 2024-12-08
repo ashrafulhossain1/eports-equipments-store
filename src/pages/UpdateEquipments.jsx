@@ -20,7 +20,7 @@ const UpdateEquipments = () => {
         const image = form.image.value;
         const itemName = form.itemName.value;
         const categoryName = form.categoryName.value;
-        const price = form.price.value;
+        const price = parseInt(form.price.value);
         const description = form.description.value;
         const rating = form.rating.value;
         const processingTime = form.processingTime.value;
@@ -48,7 +48,7 @@ const UpdateEquipments = () => {
                     Swal.fire({
                         // position: "top-end",
                         icon: "success",
-                        title: "Your work has been saved",
+                        title: "Your Updated has been saved",
                         showConfirmButton: true,
                         // timer: 1500
                     });
@@ -131,7 +131,6 @@ const UpdateEquipments = () => {
                         className="w-full p-3 border border-gray-300 rounded mt-1"
                         defaultValue={price}
                         required
-                        step="0.01"
                     />
                 </div>
 

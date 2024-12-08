@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import GoogleSignIn from './GoogleSignIn';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
+import Swal from 'sweetalert2'
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
   const { emailPasswordSignUp, updateProfileData } = useContext(AuthContext)
@@ -16,6 +18,16 @@ const SignUp = () => {
     console.log(name, photo, email, password)
 
     const userInfo = { name, email, photo }
+    
+    if (!/[A-Z]/.test(password)) {
+      return toast.error('Must have an Uppercase letter in the password!')
+    }
+    if (!/[a-z]/.test(password)) {
+      return toast.error("Must have a Lowercase letter in the password");
+    }
+    if (password.length < 6) {
+      return toast.error("Length must be at least 6 character");
+    }
 
     emailPasswordSignUp(email, password)
       .then((result) => {
@@ -24,11 +36,11 @@ const SignUp = () => {
         //------------------------- update Profile ------------------------------
         updateProfileData(name, photo)
           .then(() => {
-            console.log("Name and Photo Update")
+            // console.log("Name and Photo Update")
           })
           // update error
           .catch(updateError => {
-            console.log(updateError.message)
+            // console.log(updateError.message)
           })
 
 
@@ -44,10 +56,7 @@ const SignUp = () => {
           .then(res => res.json())
           .then(data => console.log(data))
 
-
-
-
-
+        Swal.fire("Welcome Your Registration Successfully");
         navigate('/')
       })
       .catch((error => {
@@ -57,6 +66,7 @@ const SignUp = () => {
   }
   return (
     <div>
+      <Toaster></Toaster>
       <div>
         <div className="flex justify-center items-center md:min-h-screen bg-gradient-to-br from-gray-100 to-blue-50 py-8">
           {/* Form Container */}

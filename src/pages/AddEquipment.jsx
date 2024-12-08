@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
+import Swal from 'sweetalert2'
 
 const AddEquipment = () => {
 
@@ -15,7 +16,7 @@ const AddEquipment = () => {
       const image = form.image.value;
       const itemName = form.itemName.value;
       const categoryName = form.categoryName.value;
-      const price = form.price.value;
+      const price = parseInt(form.price.value);
       const description = form.description.value;
       const rating = form.rating.value;
       const customization = form.customization.value;
@@ -38,8 +39,17 @@ const AddEquipment = () => {
       })
          .then(res => res.json())
          .then(data => {
-            // form.reset()
-            console.log(data)
+            if(data.insertedId){
+               Swal.fire({
+                  // position: "top-end",
+                  icon: "success",
+                  title: "Your Updated has been saved",
+                  showConfirmButton: true,
+                  // timer: 1500
+               });
+                form.reset()
+            }
+
          })
    }
 
@@ -114,7 +124,6 @@ const AddEquipment = () => {
                      placeholder="Price (in USD)"
                      className="w-full p-3 border border-gray-300 rounded mt-1"
                      required
-                     step="0.01"
                   />
                </div>
 

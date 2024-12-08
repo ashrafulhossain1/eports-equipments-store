@@ -5,6 +5,18 @@ const AllEquipments = () => {
     const loadedData = useLoaderData();
     const [equipments, setEquipments] = useState(loadedData);
 
+
+    const handleSorting = ()=>{
+        fetch("http://localhost:5000/sortBy")
+        .then(res=>res.json())
+        .then(data=> {
+            setEquipments(data)
+        })
+    }
+
+
+    
+
     console.log(equipments);
     return (
         <div>
@@ -15,6 +27,14 @@ const AllEquipments = () => {
 
             {/* Table */}
             <div className="overflow-x-auto">
+                <div className="my-4 text-center">
+                    <button onClick={handleSorting}
+                        className="bg-green-500 text-white px-4 py-2 rounded mx-2 hover:bg-green-600 shadow-lg transition-all duration-200"
+                    >
+                        Sort by Price
+                    </button>
+                </div>
+
                 <table className="table-auto w-full border-collapse border border-gray-300">
                     <thead className="bg-gray-200">
                         <tr>

@@ -20,7 +20,7 @@ const MyEquipments = () => {
         <div className="my-10">
             {myEquips.length === 0 &&
                 <div>
-                    <h1 className="text-4xl">You haven't added any product yet</h1>
+                    <h1 className="text-4xl text-center">You haven't added any product yet</h1>
                 </div>
             }
             {

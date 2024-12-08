@@ -9,6 +9,7 @@ import AddEquipment from "../pages/AddEquipment";
 import ViewDetails from "../components/AllEquipments/ViewDetails";
 import MyEquipments from "../pages/MyEquipments";
 import UpdateEquipments from "../pages/UpdateEquipments";
+import CategoryProduct from "../pages/CategoryProduct";
 
 const routes = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const routes = createBrowserRouter([
                 path: '/update/:id',
                 element: <Protected><UpdateEquipments></UpdateEquipments></Protected>,
                 loader: ({params})=> fetch(`http://localhost:5000/equipment/${params.id}`)
+            },
+            {
+                path: '/catBased/:cName',
+                element: <CategoryProduct></CategoryProduct>
             },
             {
                 path: '/SignIn',

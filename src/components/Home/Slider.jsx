@@ -1,10 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, Mousewheel, Keyboard } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, Mousewheel, Keyboard } from 'swiper/modules';
+// Import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-const Slider = () => {
+const Banner = () => {
     return (
         <div className="overflow-hidden">
             <Swiper
@@ -21,65 +22,59 @@ const Slider = () => {
                 modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
                 className="mySwiper"
             >
-                {/* Slide 1 */}
+                {/* Slide 1 - Parenting Objective Quote */}
                 <SwiperSlide>
-                    <div className="grid grid-cols-1 md:grid-cols-2 items-center h-[400px] md:h-[85vh]">
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
+                        {/* Background Overlay */}
+                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
                         {/* Image */}
-                        <div className="h-full w-full overflow-hidden">
-                            <img
-                                className="w-full h-full object-cover"
-                                src="https://i.ibb.co/FBTSBYB/golves.jpg"
-                                alt="Parenting Inspiration"
-                            />
-                        </div>
-                        {/* Text */}
-                        <div className="p-6 md:p-10 bg-white">
-                            <h2 className="text-2xl md:text-4xl font-semibold text-gray-800">
+                        <img
+                            className="w-full h-full object-cover"
+                            src="https://i.ibb.co.com/b2rxKTY/football-488714.jpg"
+                            alt="Parenting Inspiration"
+                        />
+                        {/* Quote */}
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                                 "The goal of parenting is not to control, but to guide."
                             </h2>
-                            <p className="mt-4 text-base md:text-lg text-gray-600">- L.R. Knost</p>
+                            <p className="mt-2 text-base sm:text-lg">- L.R. Knost</p>
                         </div>
                     </div>
                 </SwiperSlide>
 
-                {/* Slide 2 */}
+                {/* Slide 2 - Early Rise Quote */}
                 <SwiperSlide>
-                    <div className="grid grid-cols-1 md:grid-cols-2 items-center h-[400px] md:h-[85vh]">
-                        {/* Image */}
-                        <div className="h-full w-full overflow-hidden">
-                            <img
-                                className="w-full h-full object-cover"
-                                src="https://i.ibb.co/pKSgyWm/tannis.jpg"
-                                alt="Early Rise Inspiration"
-                            />
-                        </div>
-                        {/* Text */}
-                        <div className="p-6 md:p-10 bg-white">
-                            <h2 className="text-2xl md:text-4xl font-semibold text-gray-800">
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
+                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+                        <img
+                            className="w-full h-full object-cover"
+                            src="https://i.ibb.co.com/jyM1j7B/cricket-8444899.jpg"
+                            alt="Early Rise Inspiration"
+                        />
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                                 "Early to bed and early to rise makes a man healthy, wealthy, and wise."
                             </h2>
-                            <p className="mt-4 text-base md:text-lg text-gray-600">- Benjamin Franklin</p>
+                            <p className="mt-2 text-base sm:text-lg">- Benjamin Franklin</p>
                         </div>
                     </div>
                 </SwiperSlide>
 
-                {/* Slide 3 */}
+                {/* Slide 3 - Psychologist's Best Quote */}
                 <SwiperSlide>
-                    <div className="grid grid-cols-1 md:grid-cols-2 items-center h-[400px] md:h-[85vh]">
-                        {/* Image */}
-                        <div className="h-full w-full overflow-hidden">
-                            <img
-                                className="w-full h-full object-cover"
-                                src="https://i.ibb.co/YcWJys6/816-L9-XC85u-L-AC-SX679.jpg"
-                                alt="Psychologist Wisdom"
-                            />
-                        </div>
-                        {/* Text */}
-                        <div className="p-6 md:p-10 bg-white">
-                            <h2 className="text-2xl md:text-4xl font-semibold text-gray-800">
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
+                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+                        <img
+                            className="w-full h-full object-cover"
+                            src="https://i.ibb.co.com/NCZLDDw/badminton-1428046-1920.jpg"
+                            alt="Psychologist Wisdom"
+                        />
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">
                                 "The good life is a process, not a state of being."
                             </h2>
-                            <p className="mt-4 text-base md:text-lg text-gray-600">- Carl Rogers</p>
+                            <p className="mt-2 text-base sm:text-lg">- Carl Rogers</p>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -88,4 +83,4 @@ const Slider = () => {
     );
 };
 
-export default Slider;
+export default Banner;

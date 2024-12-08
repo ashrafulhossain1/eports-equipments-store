@@ -1,6 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import EquipmentCard from "../components/Home/EquipmentCard";
 import Slider from "../components/Home/Slider";
+import Category from "../components/Home/Category";
+import BestSellingEquip from "../components/Home/BestSellingEquip";
+import FAQ from "../components/Home/FAQ";
+import { Fade } from "react-awesome-reveal";
 
 
 const Home = () => {
@@ -9,7 +13,7 @@ const Home = () => {
     return (
         <div className="">
             {/* banner slider */}
-            <section>
+            <section className="">
                 <Slider></Slider>
             </section>
             {/* home equips */}
@@ -20,7 +24,17 @@ const Home = () => {
             </section>
             {/* category section */}
             <section>
-
+                <Category></Category>
+            </section>
+            <section>
+                <Fade direction="left" duration={1500}>
+                    <BestSellingEquip></BestSellingEquip>
+                </Fade>
+            </section>
+            <section>
+                {/* <Fade direction="top" duration={1000}> */}
+                    <FAQ></FAQ>
+                {/* </Fade> */}
             </section>
         </div>
     );
