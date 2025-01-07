@@ -24,17 +24,17 @@ const Banner = () => {
             >
                 {/* Slide 1 */}
                 <SwiperSlide>
-                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
-                        {/* Background Overlay */}
-                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[65vh]">
+                        {/* Gradient Overlay */}
+                        <div className="gradient-banner z-10 h-full w-full absolute pointer-events-none"></div>
                         {/* Image */}
                         <img
                             className="w-full h-full object-cover"
-                            src="https://i.ibb.co.com/b2rxKTY/football-488714.jpg"
+                            src="https://i.ibb.co/b2rxKTY/football-488714.jpg"
                             alt="Football Equipment"
                         />
                         {/* Content */}
-                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-50 text-white px-4 w-full md:w-5/12 user-select">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                                 Discover Premium Football Equipment
                             </h2>
@@ -50,14 +50,17 @@ const Banner = () => {
 
                 {/* Slide 2 */}
                 <SwiperSlide>
-                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
-                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[65vh]">
+                        {/* Gradient Overlay */}
+                        <div className="gradient-banner z-10 h-full w-full absolute pointer-events-none"></div>
+                        {/* Image */}
                         <img
                             className="w-full h-full object-cover"
-                            src="https://i.ibb.co.com/jyM1j7B/cricket-8444899.jpg"
+                            src="https://i.ibb.co/jyM1j7B/cricket-8444899.jpg"
                             alt="Cricket Equipment"
                         />
-                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
+                        {/* Content */}
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-50 text-white px-4 w-full md:w-5/12 user-select">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                                 Ultimate Cricket Gear Collection
                             </h2>
@@ -73,15 +76,18 @@ const Banner = () => {
 
                 {/* Slide 3 */}
                 <SwiperSlide>
-                    <div className="relative h-[250px] sm:h-[400px] md:h-[95vh]">
-                        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+                    <div className="relative h-[250px] sm:h-[400px] md:h-[65vh]">
+                        {/* Gradient Overlay */}
+                        <div className="gradient-banner z-10 h-full w-full absolute pointer-events-none"></div>
+                        {/* Image */}
                         <img
                             className="w-full h-full object-cover"
-                            src="https://i.ibb.co.com/NCZLDDw/badminton-1428046-1920.jpg"
+                            src="https://i.ibb.co/NCZLDDw/badminton-1428046-1920.jpg"
                             alt="Badminton Equipment"
                         />
-                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-20 text-white px-4 w-full md:w-5/12">
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold ">
+                        {/* Content */}
+                        <div className="absolute top-1/2 left-6 sm:left-10 transform -translate-y-1/2 z-50 text-white px-4 w-full md:w-5/12 user-select">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                                 Badminton Essentials for Every Player
                             </h2>
                             <p className="mt-2 text-base sm:text-lg">

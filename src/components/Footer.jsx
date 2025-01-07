@@ -35,12 +35,12 @@ const Footer = () => {
                             </li>
                             <li>
                                 <span className="link link-hover hover:text-accent transition-all duration-300">
-                                    About Us
+                                    <Link to={'/about'}>About</Link>
                                 </span>
                             </li>
                             <li>
                                 <span className="link link-hover hover:text-accent transition-all duration-300">
-                                    FAQ
+                                    Supports
                                 </span>
                             </li>
                             <li>

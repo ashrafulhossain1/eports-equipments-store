@@ -21,30 +21,49 @@ const Navbar = () => {
     const navLinks = (
         <>
             <li>
-                <NavLink className="rounded-full dark:text-dark-text" to="/">
+                <NavLink className="rounded-full  dark:text-dark-text" to="/">
                     Home
                 </NavLink>
             </li>
             <li>
-                <NavLink className="rounded-full dark:text-dark-text" to="/allEquipments">
+                <NavLink className="rounded-full  dark:text-dark-text" to="/allEquipments">
                     All Equipments
                 </NavLink>
             </li>
+
+            {user && <>
+
+                <li>
+                    <NavLink className="rounded-full  dark:text-dark-text" to="/myEquipments">
+                        My Equipments
+                    </NavLink>
+
+                </li>
+
+                <li>
+                    <NavLink className="rounded-full  dark:text-dark-text" to="/addEquipments">
+                        Add Equipments
+                    </NavLink>
+                </li>
+            </>
+            }
+
+
             <li>
-                <NavLink className="rounded-full dark:text-dark-text" to="/addEquipments">
-                    Add Equipments
+                <NavLink className="rounded-full  dark:text-dark-text" to="/contactUs">
+                    Contact Us
                 </NavLink>
             </li>
-            {user && <li>
-                <NavLink className="rounded-full dark:text-dark-text" to="/myEquipments">
-                    My Equipments
+            <li>
+                <NavLink className="rounded-full  dark:text-dark-text" to="/about">
+                    About
                 </NavLink>
-            </li>}
+            </li>
         </>
     );
 
     return (
-        <div className="sticky top-0 left-0 z-50 shadow-md glass bg-[white] dark:bg-dark-background">
+        <div className="sticky top-0 left-0 z-50 shadow-md bg-gradient-to-br from-black via-gray-900 to-gray-800  dark:bg-dark-background">
             <div className="container mx-auto navbar ">
                 <div className="navbar-start ml-0 pl-0">
                     <div className="dropdown ">
@@ -66,17 +85,17 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-light-background dark:bg-dark-background rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                            className="menu menu-sm text-slate-100 dropdown-content bg-light-background dark:bg-dark-background rounded-box z-[1] mt-3 w-52 p-2 shadow"
                         >
                             {navLinks}
                         </ul>
                     </div>
-                    <Link to="/" className="btn p-0 btn-ghost text-xl rounded-full text-light-text dark:text-dark-text">
+                    <Link to="/" className="btn p-0 btn-ghost text-xl rounded-full text-slate-100 dark:text-dark-text">
                         EquiSports
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+                    <ul className="menu text-slate-100 menu-horizontal px-1 ">{navLinks}</ul>
                 </div>
                 <div className="navbar-end items-center">
                     <ThemeToggle />
@@ -92,7 +111,7 @@ const Navbar = () => {
                             />
                             <Link
                                 onClick={handleSignOut}
-                                className="btn btn-ghost rounded-full text-light-text dark:text-dark-text"
+                                className="btn btn-ghost rounded-full text-slate-100 dark:text-dark-text"
                             >
                                 Log Out
                             </Link>
@@ -101,13 +120,13 @@ const Navbar = () => {
                         <>
                             <NavLink
                                 to="/SignIn"
-                                className="text-xs btn px-2 btn-ghost rounded-full md:text-base text-light-text dark:text-dark-text"
+                                className="text-xs btn px-2 btn-ghost rounded-full md:text-base text-slate-100 dark:text-dark-text"
                             >
                                 Sign In
                             </NavLink>
                             <NavLink
                                 to="/signUp"
-                                className="text-xs btn mr-0 px-2 btn-ghost rounded-full md:text-base text-light-text dark:text-dark-text"
+                                className="text-xs btn mr-0 px-2 btn-ghost rounded-full md:text-base text-slate-100 dark:text-dark-text"
                             >
                                 Sign Up
                             </NavLink>

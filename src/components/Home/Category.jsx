@@ -12,7 +12,7 @@ const navigate = useNavigate()
     };
 
     return (
-        <div id="category" className="py-10 bg-light-card dark:bg-[#121212] dark:rounded-lg">
+        <div id="category" className="py-10 dark:bg-[#121212] dark:rounded-lg bg-gray-200">
             <div className="container mx-auto px-4">
                 {/* Category Title */}
                 <h2 className="text-3xl font-bold text-gray-800 text-center mb-8 dark:text-white">

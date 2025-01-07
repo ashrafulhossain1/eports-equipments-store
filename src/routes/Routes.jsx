@@ -12,6 +12,8 @@ import UpdateEquipments from "../pages/UpdateEquipments";
 import CategoryProduct from "../pages/CategoryProduct";
 import ContactUs from "../pages/ContactUs";
 import ErrorPage from "../pages/ErrorPage";
+import About from "../pages/About";
+import Supports from "../pages/Supports";
 
 const routes = createBrowserRouter([
     {
@@ -46,7 +48,7 @@ const routes = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <Protected><UpdateEquipments></UpdateEquipments></Protected>,
-                loader: ({params})=> fetch(`https://sport-express-server.vercel.app/equipment/${params.id}`)
+                loader: ({ params }) => fetch(`https://sport-express-server.vercel.app/equipment/${params.id}`)
             },
             {
                 path: '/catBased/:cName',
@@ -63,6 +65,14 @@ const routes = createBrowserRouter([
             {
                 path: '/contactUs',
                 element: <ContactUs></ContactUs>
+            },
+            {
+                path: '/about',
+                element: <About></About>
+            },
+            {
+                path: '/support',
+                element: <Supports></Supports>
             }
         ]
 

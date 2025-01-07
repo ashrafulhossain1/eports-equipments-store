@@ -45,11 +45,11 @@ const EquipCard = ({ card, myEquips, setMyEquips }) => {
     return (
         <div className="border flex flex-col justify-between rounded-lg shadow-md md:p-4  p-2 bg-white">
             {/* Image */}
-            <div className='h-44'>
+            <div>
                 <img
                     src={image}
                     alt={itemName}
-                    className="w-full h-full  object-contain rounded-t-lg mb-4"
+                    className="w-full h-[200px]   rounded-t-lg mb-4"
                 />
             </div>
 

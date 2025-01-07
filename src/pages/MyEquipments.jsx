@@ -18,7 +18,7 @@ const MyEquipments = () => {
 
 
     return (
-        <div className="my-10">
+        <div className="my-10 max-w-screen-xl mx-auto">
             <Helmet>
                 <title>My Equipment List</title>
             </Helmet>
@@ -32,7 +32,7 @@ const MyEquipments = () => {
 
                 <div>
                     <h1 className="text-4xl text-center">Your Total added Equipment: {myEquips.length}</h1>
-                    <div className="grid md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 lg:gap-16 md:my-8  my-4 p-2">
+                    <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-16 md:my-8  my-4 p-2">
                         {myEquips.map(card => <EquipCard
                             key={card._id}
                             card={card}

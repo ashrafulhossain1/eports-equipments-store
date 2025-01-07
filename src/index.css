@@ -1,18 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+body {
+    font-family: "Kumbh Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  
+  }
 
-.glass{
-background: rgba(255, 255, 255, 0.21);
-/* border-radius: 16px; */
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.2px);
--webkit-backdrop-filter: blur(4.2px);
-border: 1px solid rgba(255, 255, 255, 0.018);
+
+/* 
+  .glass {
+    background: rgba(228, 231, 236, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.5px);
+    -webkit-backdrop-filter: blur(12.5px);
+} */
+
+.slider-shadow {
+    box-shadow: rgba(99, 99, 99, 0.038) 0px 2px 8px 0px;
 }
 
-.slider-shadow{
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.gradient-banner {
+    background: rgba(4, 0, 0, 0.774);
+    background: linear-gradient(60deg, rgba(4, 0, 0, 0.9112762536655287) 20%, rgba(0, 0, 0, 0) 100%);
+}
+
+.user-select {
+    user-select: text;
 }
