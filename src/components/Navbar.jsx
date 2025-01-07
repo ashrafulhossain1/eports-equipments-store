@@ -27,7 +27,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink className="rounded-full  dark:text-dark-text" to="/allEquipments">
-                    All Equipments
+                    Equipments
                 </NavLink>
             </li>
 
@@ -35,14 +35,14 @@ const Navbar = () => {
 
                 <li>
                     <NavLink className="rounded-full  dark:text-dark-text" to="/myEquipments">
-                        My Equipments
+                        My Equips
                     </NavLink>
 
                 </li>
 
                 <li>
                     <NavLink className="rounded-full  dark:text-dark-text" to="/addEquipments">
-                        Add Equipments
+                        Add Equips
                     </NavLink>
                 </li>
             </>
