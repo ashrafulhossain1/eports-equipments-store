@@ -6,6 +6,15 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 [Visit EquiSports](https://sports-express-961ff.web.app)
 
 ---
+## 🛠️ Technologies Used
+- **React**: For building the user interface.
+- **React Router**: For dynamic and private routing.
+- **Firebase**: For authentication and hosting.
+- **MongoDB**: For data storage.
+- **Tailwind CSS**: For responsive styling.
+- **React Tooltip** and **React Awesome Reveal**: For interactive animations.
+
+---
 
 ## ✨ Features
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop devices.
@@ -47,15 +56,6 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 
 ---
 
-## 🛠️ Technologies Used
-- **React**: For building the user interface.
-- **React Router**: For dynamic and private routing.
-- **Firebase**: For authentication and hosting.
-- **MongoDB**: For data storage.
-- **Tailwind CSS**: For responsive styling.
-- **React Tooltip** and **React Awesome Reveal**: For interactive animations.
-
----
 
 ## 🔧 Environment Setup
 1. Clone the repositories:
