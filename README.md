@@ -7,13 +7,16 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 
 ---
 
+![EquiSports Homepage](https://i.ibb.co.com/zWD6JHCd/Fire-Shot-Capture-033-Home-Sport-Equip-sports-express-961ff-web-app.png)
+
+---
+
 ## 🛠️ Technologies Used
 - **React**: For building the user interface.
 - **React Router**: For dynamic and private routing.
 - **Firebase**: For authentication and hosting.
 - **MongoDB**: For data storage.
 - **Tailwind CSS**: For responsive styling.
-- **React Tooltip** and **React Awesome Reveal**: For interactive animations.
 
 ---
 
@@ -23,9 +26,6 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 - **Product Management**: Add, update, delete, and view details of sports equipment, with a personalized list for logged-in users.
 - **Sorting Functionality**: Products can be sorted by price (ascending/descending).
 - **Dark/Light Mode**: Toggle between dark and light themes on the homepage.
-- **Interactive Animations**: Smooth animations implemented with React Tooltip and React Awesome Reveal.
-- **404 Page**: Handles unmatched routes with a custom 404 error page.
-
 ---
 
 ## 🔧 Environment Setup
