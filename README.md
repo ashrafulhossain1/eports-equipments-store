@@ -94,7 +94,7 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 
 2. Start the server development server:
    ```bash
-   npm run dev
+   nodemon start
    ```
 
 ---
