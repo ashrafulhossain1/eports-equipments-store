@@ -7,7 +7,7 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 
 ---
 
-<img src="https://i.ibb.co.com/zWD6JHCd/Fire-Shot-Capture-033-Home-Sport-Equip-sports-express-961ff-web-app.png" alt="EquiSports Homepage" height="1000">
+<img src="https://i.ibb.co.com/zWD6JHCd/Fire-Shot-Capture-033-Home-Sport-Equip-sports-express-961ff-web-app.png" alt="EquiSports Homepage" width="100%" height="1000">
 
 ---
 
