@@ -1,7 +1,3 @@
-Got it! Below is the updated `README.md` file for your **EquiSports** project, including the **Dependencies** and **Dev Dependencies** sections. This will make your documentation more comprehensive and developer-friendly.
-
----
-
 # **EquiSports: Sports Equipment Store**
 
 EquiSports is a responsive e-commerce platform for purchasing sports equipment. It allows users to browse, review, and manage sports accessories efficiently with secure authentication.
@@ -34,45 +30,72 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 
 ## 🔧 Environment Setup
 
-1. Clone the repositories:
-   - Client: `https://github.com/programming-hero-web-course2/b10-a10-client-side-ashrafulhossain1`
-   - Server: `https://github.com/programming-hero-web-course2/b10-a10-server-side-ashrafulhossain1`
+### **Step 1: Clone the Client-Side Repository**
+1. Clone the client-side repository:
+   ```bash
+   git clone https://github.com/programming-hero-web-course2/b10-a10-client-side-ashrafulhossain1
+   ```
 
-2. Install dependencies:
+2. Navigate to the client directory:
+   ```bash
+   cd b10-a10-client-side-ashrafulhossain1
+   ```
+
+3. Create a `.env` file in the root of the client directory and add the following Firebase credentials:
+   ```env
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
+   ```
+
+---
+
+### **Step 2: Install Client-Side Dependencies**
+1. Install the required dependencies:
    ```bash
    npm install
    ```
 
-3. Set up environment variables:
-   - Create a `.env` file in the root of both the client and server directories.
-   - Add the following variables (replace with your own credentials):
+2. Start the client development server:
+   ```bash
+   npm start
+   ```
 
-     **Client-side (.env):**
-     ```env
-     REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
-     REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-     REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
-     REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-     REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-     REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
-     ```
+---
 
-     **Server-side (.env):**
-     ```env
-     PORT=5000
-     MONGODB_URI=your_mongodb_connection_string
-     JWT_SECRET=your_jwt_secret_key
-     ```
+### **Step 3: Clone the Server-Side Repository**
+1. Clone the server-side repository:
+   ```bash
+   git clone https://github.com/programming-hero-web-course2/b10-a10-server-side-ashrafulhossain1
+   ```
 
-4. Start the development servers:
-   - For the client:
-     ```bash
-     npm start
-     ```
-   - For the server:
-     ```bash
-     npm run dev
-     ```
+2. Navigate to the server directory:
+   ```bash
+   cd b10-a10-server-side-ashrafulhossain1
+   ```
+
+3. Create a `.env` file in the root of the server directory and add the following variables:
+   ```env
+   PORT=5000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   ```
+
+---
+
+### **Step 4: Install Server-Side Dependencies**
+1. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the server development server:
+   ```bash
+   npm run dev
+   ```
 
 ---
 
@@ -114,35 +137,32 @@ These are tools used during development:
 
 ---
 
-### **Server-Side (Node.js + Express)**
+## 🌐 API Endpoints
 
-#### **Dependencies**
-These are the main libraries used for the backend:
+Here are the key API endpoints provided by the server:
 
-```json
-"dependencies": {
-  "cors": "^2.8.5",                       // Middleware to enable CORS
-  "dotenv": "^16.3.1",                    // Environment variable management
-  "express": "^4.18.2",                   // Web framework for Node.js
-  "jsonwebtoken": "^9.0.0",               // For generating and verifying JWT tokens
-  "mongoose": "^7.5.0",                   // MongoDB ODM for database interactions
-  "nodemon": "^3.0.1"                     // Automatically restarts the server on code changes
-}
-```
+### **Users**
+- **GET `/users`**: Fetch all users.
+- **GET `/users/:email`**: Fetch a specific user by email.
+- **POST `/users`**: Add a new user.
 
-#### **Dev Dependencies**
-These are tools used during development:
-
-```json
-"devDependencies": {
-  "eslint": "^8.47.0",                    // Linter for identifying and fixing code issues
-  "eslint-config-airbnb-base": "^15.0.0", // ESLint configuration for Airbnb style guide
-  "eslint-plugin-import": "^2.28.1",      // ESLint plugin for import/export rules
-  "prettier": "^3.0.3"                    // Code formatter for consistent styling
-}
-```
+### **Equipments**
+- **GET `/allEquipments`**: Fetch all sports equipment.
+- **GET `/homeEquip`**: Fetch limited equipment for the homepage.
+- **GET `/myEquip?email=<user_email>`**: Fetch equipment added by a specific user.
+- **GET `/allEquipments/:id`**: Fetch details of a specific equipment by ID.
+- **POST `/addEquips`**: Add new sports equipment.
+- **PUT `/update/:id`**: Update an existing equipment by ID.
+- **DELETE `/myEquip/:id`**: Delete an equipment by ID.
 
 ---
 
+## 🧪 Testing
 
+To ensure everything is working correctly, you can test the following features:
 
+- **Authentication**: Try logging in using Google or Email/Password and verify that user data persists across sessions.
+- **Product Management**: Add a new product through the dashboard and check if it appears on the homepage. Update or delete products to confirm functionality.
+- **Sorting**: Sort products by price (ascending/descending) and ensure they are displayed in the correct order.
+- **Dark/Light Mode**: Toggle between themes and confirm that the UI updates accordingly.
+- **Responsive Design**: Test the website on various screen sizes (mobile, tablet, desktop) to ensure proper layout adjustments.
