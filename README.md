@@ -33,7 +33,7 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 ### **Step 1: Clone the Client-Side Repository**
 1. Clone the client-side repository:
    ```bash
-   git clone https://github.com/programming-hero-web-course2/b10-a10-client-side-ashrafulhossain1
+   git clone https://github.com/ashrafulhossain1/eports-equipments-store
    ```
 
 2. Navigate to the client directory:
@@ -69,7 +69,7 @@ EquiSports is a responsive e-commerce platform for purchasing sports equipment. 
 ### **Step 3: Clone the Server-Side Repository**
 1. Clone the server-side repository:
    ```bash
-   git clone https://github.com/programming-hero-web-course2/b10-a10-server-side-ashrafulhossain1
+   git clone https://github.com/ashrafulhossain1/sports-express-server
    ```
 
 2. Navigate to the server directory:
