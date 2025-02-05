@@ -157,12 +157,6 @@ Here are the key API endpoints provided by the server:
 
 ---
 
-## 🧪 Testing
+## inquiry
+-Feel free to contact me. 
 
-To ensure everything is working correctly, you can test the following features:
-
-- **Authentication**: Try logging in using Google or Email/Password and verify that user data persists across sessions.
-- **Product Management**: Add a new product through the dashboard and check if it appears on the homepage. Update or delete products to confirm functionality.
-- **Sorting**: Sort products by price (ascending/descending) and ensure they are displayed in the correct order.
-- **Dark/Light Mode**: Toggle between themes and confirm that the UI updates accordingly.
-- **Responsive Design**: Test the website on various screen sizes (mobile, tablet, desktop) to ensure proper layout adjustments.
