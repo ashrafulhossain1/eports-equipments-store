@@ -157,6 +157,7 @@ Here are the key API endpoints provided by the server:
 
 ---
 
-## inquiry
--Feel free to contact me. 
+You're very welcome! 😊 I'm glad I could help. If you have any more questions or need further assistance with your project, feel free to ask. Best of luck with **EquipStore**—it sounds like an amazing platform, and I’m sure it will be a success! 🚀
+
+Happy coding, and take care! 👨‍💻👩‍💻
 
